@@ -1,11 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NanoCore - Tecnología y Electrónicos</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="../nanocore/Style.css" rel="stylesheet">
 </head>
 <body>
-    
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo-group">
+      <span class="logo-badge">N</span>
+      <span class="logo-text">NANOCORE</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#catalogo" class="nav-link">Catalogo</a>
+      <a href="#ofertas" class="nav-link">Ofertas</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Buscar...">
+      </div>
+
+      <button type="button" class="icon-btn" aria-label="Cuenta">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+
+      <button type="button" class="icon-btn" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>¡En Nanocore te ofrecemos lo mejor en dispositivos electronicos, con los mejores descuentos en computadoras, pantallas y celulares</h1>
+    <a href="#catalogo" class="btn-primary">VER OFERTAS</a>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80" alt="Laptop">
+  </div>
+</section>
+
+<!-- ===================== CATALOGO / NOVEDADES ===================== -->
+<main class="container" id="catalogo">
+  <h2 class="section-title">Novedades</h2>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&q=80" alt="Laptop HP A1UD1LA"></div>
+      <h3>Laptop HP A1UD1LA</h3>
+      <p class="desc">AMD Ryzen 3 7320U 8GB 512GB SSD 15.6vt</p>
+      <div class="product-footer">
+        <span class="price">$579.00</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&q=80" alt="Notebook Gamer Acer Nitro V15 Intel"></div>
+      <h3>Notebook Gamer Acer Nitro V15 Intel</h3>
+      <p class="desc">Core i5-13420H, RTX 3050, Tela 15.6</p>
+      <div class="product-footer">
+        <span class="price">$1,000.00</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=300&q=80" alt="Asus Zenbook 14"></div>
+      <h3>Asus Zenbook 14</h3>
+      <p class="desc">16GB 512GB SSD Qualcomm Adreno 14.0</p>
+      <div class="product-footer">
+        <span class="price">$1,000.00</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=300&q=80" alt="Dell Latitude 7480 Core i5 6300U"></div>
+      <h3>Dell Latitude 7480 Core i5 6300U</h3>
+      <p class="desc">2.4GHz 8GB RAM 256GB SSD 14</p>
+      <div class="product-footer">
+        <span class="price">$1,000.00</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&q=80" alt="Jbl Over Ear Azul Jblt720Btblu"></div>
+      <h3>Jbl Over Ear Azul Jblt720Btblu</h3>
+      <p class="desc">Azul, Duración de la batería Hasta 76 horas, Capacidad de la batería 500 mAh.</p>
+      <div class="product-footer">
+        <span class="price">$65</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&q=80" alt="Inalámbricos WH-CH520 Azul"></div>
+      <h3>Inalámbricos WH-CH520 Azul</h3>
+      <p class="desc">Rosados, 50 horas de batería, inalámbricos, precio aproximado</p>
+      <div class="product-footer">
+        <span class="price">$60</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?w=300&q=80" alt="Stylus para iPad y iPad pro"></div>
+      <h3>Stylus para iPad y iPad pro</h3>
+      <p class="desc">Lápiz digital preciso, ideal para iPad, dibujo y escritura.</p>
+      <div class="product-footer">
+        <span class="price">$100</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&q=80" alt="Ipad Apple A16"></div>
+      <h3>Ipad Apple A16</h3>
+      <p class="desc">Gris, 11 pulgadas, batería hasta 10 horas.</p>
+      <div class="product-footer">
+        <span class="price">$349</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=300&q=80" alt="Laptop Dell RDK0W"></div>
+      <h3>Laptop Dell RDK0W</h3>
+      <p class="desc">Intel 5 8 GB 512 GB SSD 15.6"</p>
+      <div class="product-footer">
+        <span class="price">$561.96</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="discount-badge">-30%</span>
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&q=80" alt="Monitor Gaming Acer"></div>
+      <h3>Monitor Gaming Acer</h3>
+      <p class="desc">LED 27" FHD Negro VG270P6BIP</p>
+      <div class="product-footer">
+        <span class="price">$129.00</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="discount-badge">-30%</span>
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?w=300&q=80" alt="Monitor TCL Mini"></div>
+      <h3>Monitor TCL Mini</h3>
+      <p class="desc">Monitor TCL Mini LED de alta calidad y brillo.</p>
+      <div class="product-footer">
+        <span class="price">$167.00</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="discount-badge">-30%</span>
+      <div class="product-img"><img src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=300&q=80" alt="Monitor Gaming Acer"></div>
+      <h3>Monitor Gaming Acer</h3>
+      <p class="desc">LED 27" FHD Negro VG270P6BIP</p>
+      <div class="product-footer">
+        <span class="price">$150.36</span>
+        <button class="cart-btn" type="button" aria-label="Agregar al carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===================== OFERTAS (ancla) ===================== -->
+<section id="ofertas" class="ofertas-anchor"></section>
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer-wrap">
+  <footer class="footer">
+    <div class="footer-col">
+      <p class="footer-copy">©2026 NanoCore. Todos los<br>derechos reservados.</p>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-col footer-contact-col">
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> NANOCORE@gmail.com</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7051-3605</span>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-col">
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Sonsonate, El Salvador</span>
+    </div>
+  </footer>
+</div>
+
 </body>
 </html>
