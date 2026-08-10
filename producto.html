@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle de Producto - NanoCore</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <main class="main-container">
+    <div class="product-card-detail">
+      
+      <div class="product-top">
+        <div class="img-box">
+          <span id="prod-descuento" class="badge-discount"></span>
+          <img id="prod-imagen" src="" alt="Producto">
+        </div>
+        
+        <div class="info-box">
+          <h1 id="prod-nombre">Cargando...</h1>
+          <div class="price-container">
+            <span id="prod-precio-anterior" class="old-price"></span>
+            <span id="prod-precio" class="current-price"></span>
+          </div>
+          <button class="btn-cart">¡AGREGAR AL CARRITO!</button>
+        </div>
+      </div>
+
+      <div class="features-bar">
+        <h2>CARACTERISTICAS</h2>
+      </div>
+
+      <div class="features-content">
+        <ul id="prod-caracteristicas"></ul>
+      </div>
+
+      <div class="footer-btn-container">
+        <button class="btn-more-info">MÁS INFORMACIÓN</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="productos.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const idProducto = urlParams.get('id');
+
+    if (idProducto && productos[idProducto]) {
+      const p = productos[idProducto];
+      
+      document.getElementById('prod-nombre').textContent = p.nombre;
+      document.getElementById('prod-precio').textContent = p.precio;
+      document.getElementById('prod-imagen').src = p.imagen;
+
+      // Descuento y precio anterior (si aplica)
+      if (p.descuento) {
+        document.getElementById('prod-descuento').textContent = p.descuento;
+        document.getElementById('prod-descuento').style.display = 'block';
+      }
+      if (p.precioAnterior) {
+        document.getElementById('prod-precio-anterior').textContent = p.precioAnterior;
+      }
+
+      // Cargar lista de características en HTML
+      const listaHTML = document.getElementById('prod-caracteristicas');
+      p.caracteristicas.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = item;
+        listaHTML.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
