@@ -65,7 +65,6 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   gap: 10px;
 }
 
-/* Ajuste del Logo para evitar que crezca gigante */
 .logo-badge {
   width: 60px; 
   height: 60px; 
@@ -102,17 +101,30 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
 }
 
 .nav-link {
-  color: #000000; 
-  font-weight: 500; 
+  position: relative;
+  color: #333333; 
+  font-weight: normal; 
   font-size: 16px;
   text-decoration: none; 
-  text-underline-offset: 4px;
+  padding-bottom: 4px;
 }
+
 .nav-link.active {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  font-weight: 700;
+  font-weight: bold;
+  color: #000000;
 }
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 2px;
+}
+
 .nav-link:hover {
   color: #525353;
   text-decoration: underline;
@@ -125,7 +137,17 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   gap: 18px;
 }
 
-/* Buscador corregido y ajustado a la derecha */
+.nav-actions .icon-btn {
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+  color: #000000;
+}
+
+.nav-actions .icon-btn:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 .search-box {
   display: flex; 
   align-items: center; 
@@ -146,12 +168,6 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   flex: 1; 
   background: transparent;
   text-align: left;
-}
-
-.icon-btn {
-  color: #000000; 
-  display: flex; 
-  align-items: center;
 }
 
 /* ============ HERO ============ */
@@ -194,7 +210,6 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   box-shadow: 0 6px 14px rgba(0,0,0,.2);
 }
 
-/* Imagen del Hero sin el marco negro */
 .hero-image {
   flex: 1; 
   min-width: 280px; 
@@ -207,11 +222,11 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   width: 100%;
 }
 
-/* ============ CATALOGO / TARJETAS (PÁGINA INICIO) ============ */
-.container {
-  max-width: 1300px; 
-  margin: 0 auto; 
-  padding: 45px 30px 20px;
+/* ============ CONTENEDORES Y GRIDS GENERALES ============ */
+.main-container, .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 
 .section-title {
@@ -220,41 +235,29 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   font-weight: 600;
 }
 
-/* Grid ajustado a 5 columnas */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-@media (max-width: 1100px) {
-  .product-grid { grid-template-columns: repeat(3, 1fr); } 
-}
-@media (max-width: 768px) {
-  .product-grid { grid-template-columns: repeat(2, 1fr); } 
-}
-@media (max-width: 480px) {
-  .product-grid { grid-template-columns: 1fr; } 
-}
-
-/* Tarjetas de la página de inicio (Tu diseño original) */
+/* ============ TARJETAS DEL CATÁLOGO E INICIO ============ */
 .product-card {
-  background: #fff; 
+  background: #ffffff; 
   border: 1px solid var(--border); 
   border-radius: 12px;
   padding: 16px; 
   display: flex; 
   flex-direction: column; 
   position: relative;
-  min-height: 310px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+  min-height: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 
 .product-card:hover {
-  transform: translateY(-6px) scale(1.02); 
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
-  border-color: rgba(0, 0, 0, 0.15);
-  z-index: 5; 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
 }
 
 .discount-badge {
@@ -266,44 +269,48 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   font-size: 11px; 
   font-weight: 700; 
   border-radius: 50%; 
-  width: 38px; 
-  height: 38px;
+  width: 36px; 
+  height: 36px;
   display: flex; 
   align-items: center; 
   justify-content: center; 
   z-index: 2;
 }
 
+/* Formato fijo para las imágenes dentro de las tarjetas */
 .product-card .product-img {
-  height: 120px; 
+  width: 100%;
+  height: 150px; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   overflow: hidden;
 }
 
 .product-card .product-img img {
-  width: 65%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .product-card h3 {
   font-size: 15px; 
   font-weight: 600; 
-  margin-bottom: 4px; 
+  margin-bottom: 6px; 
   font-family: 'Inter', sans-serif;
-  height: 38px; 
+  height: 40px; 
   overflow: hidden;
 }
 
 .product-card p.desc {
   font-size: 12px; 
   color: var(--text-muted); 
-  margin-bottom: 8px; 
+  margin-bottom: 12px; 
   line-height: 1.4; 
-  height: 32px; 
+  height: 34px; 
   overflow: hidden;
 }
 
@@ -314,14 +321,16 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   margin-top: auto;
 }
 
-.price {
+.product-footer .price {
   font-weight: 700; 
   font-size: 16px;
+  color: #1a1a1a;
 }
 
 .cart-btn {
-  width: 26px; 
-  height: 26px; 
+  width: 32px; 
+  height: 32px; 
+  border-radius: 6px;
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -331,11 +340,228 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
 .cart-btn svg {
   fill: var(--red); 
   stroke: var(--red);
-  transform: scale(1.4);
 }
 
 .cart-btn:hover {
-  transform: scale(1.12);
+  transform: scale(1.15);
+}
+
+/* ==========================================
+   ESTILOS EXCLUSIVOS: DETALLE DE PRODUCTO (producto.html)
+   ========================================== */
+.product-card-detail {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  margin-top: 20px;
+}
+
+.product-card-detail .product-top {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+  .product-card-detail .product-top {
+    flex-direction: column;
+  }
+}
+
+/* Caja de imagen sin marcos ni cuadros */
+.product-card-detail .img-box {
+  flex: 1;
+  max-width: 420px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.product-card-detail .img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card-detail .img-box img:hover {
+  transform: scale(1.03);
+}
+
+.product-card-detail .info-box {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-card-detail .info-box h1 {
+  font-size: 1.8rem;
+  color: #1a202c;
+  margin: 0;
+}
+
+.product-card-detail .price-container {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.product-card-detail .old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.product-card-detail .current-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0b2545;
+}
+
+.product-card-detail .stock-badge {
+  color: #15803d;
+  background-color: #dcfce7;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.product-card-detail .quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.product-card-detail .qty-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-card-detail .btn-qty {
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.product-card-detail .btn-qty:hover {
+  background: #e2e8f0;
+}
+
+.product-card-detail .qty-controls input {
+  width: 45px;
+  text-align: center;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.product-card-detail .action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.product-card-detail .btn-cart {
+  background-color: #0d2b45;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.product-card-detail .btn-cart:hover {
+  background-color: #134074;
+}
+
+.product-card-detail .btn-buy {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.product-card-detail .btn-buy:hover {
+  background-color: #1d4ed8;
+}
+
+.product-card-detail .value-props {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* Barra de Características */
+.product-card-detail .features-bar {
+  background-color: #0d2b45;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.product-card-detail .features-bar h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.product-card-detail .features-content ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-card-detail .features-content li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.product-card-detail .footer-btn-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-card-detail .btn-more-info {
+  background-color: #0d2b45;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* ============ FOOTER ============ */
@@ -438,146 +664,4 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   .footer-divider {
     display: none;
   }
-}
-
-/* ============ ESTILOS EXCLUSIVOS VISTA CATALOGO ============ */
-.catalog-section {
-  max-width: 1300px;
-  margin: 40px auto 80px auto;
-  padding: 0 40px;
-  min-height: 60vh;
-}
-
-.catalog-title {
-  font-size: 32px;
-  color: #121212;
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-.catalog-subtitle {
-  color: #555555;
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.catalog-card {
-  background: rgba(24, 24, 27, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.catalog-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.catalog-card .product-img-wrap {
-  width: 100%;
-  height: 220px;
-  background: #0d0d0d;
-  overflow: hidden;
-}
-
-.catalog-card .product-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.catalog-card .product-info {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.catalog-card .product-title {
-  color: #ffffff;
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.catalog-card .product-desc {
-  color: #a1a1aa;
-  font-size: 14px;
-  line-height: 1.4;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.catalog-card .product-price {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.catalog-card .btn-buy {
-  background: #ffffff;
-  color: #000000;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-/* Esto fuerza a cualquier tarjeta y a sus imágenes a no salirse */
-.product-card {
-  overflow: hidden !important;
-}
-
-.product-card img {
-  width: 100% !important;
-  max-height: 180px !important; /* Ajusta este alto si las quieres más grandes o pequeñas */
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 auto 10px auto !important;
-}
-/* Estilo base para los enlaces del menú */
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  color: #333333;
-  font-weight: normal;
-  padding-bottom: 4px;
-}
-
-/* Estilo cuando la página está seleccionada (ACTIVA) */
-.nav-link.active {
-  font-weight: bold;
-  color: #000000;
-}
-
-/* La línea debajo del texto */
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #000000; /* Puedes cambiar este color al rojo (#e63946) si prefieres */
-  border-radius: 2px;
-}
-/* Transición suave para que el cambio de tamaño no sea brusco */
-.nav-actions .icon-btn {
-  transition: transform 0.2s ease-in-out;
-  display: inline-block;
-}
-
-/* Efecto al pasar el cursor (mouse) sobre el ícono */
-.nav-actions .icon-btn:hover {
-  transform: scale(1.2); /* Aumenta el tamaño un 20% */
-  cursor: pointer;
 }
