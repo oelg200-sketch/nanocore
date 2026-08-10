@@ -82,13 +82,12 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
 }
 
 .logo-group img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
-
 
 .logo-text {
   color: #000000; 
@@ -106,12 +105,18 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   color: #000000; 
   font-weight: 500; 
   font-size: 16px;
-  text-decoration: underline; 
+  text-decoration: none; 
   text-underline-offset: 4px;
 }
-
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  font-weight: 700;
+}
 .nav-link:hover {
-  color: #7fe8d1;
+  color: #525353;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 .nav-actions {
@@ -140,7 +145,7 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   font-size: 14px; 
   flex: 1; 
   background: transparent;
-  text-align: right;
+  text-align: left;
 }
 
 .icon-btn {
@@ -202,7 +207,7 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   width: 100%;
 }
 
-/* ============ CATALOGO / TARJETAS ============ */
+/* ============ CATALOGO / TARJETAS (PÁGINA INICIO) ============ */
 .container {
   max-width: 1300px; 
   margin: 0 auto; 
@@ -215,7 +220,7 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   font-weight: 600;
 }
 
-/* Grid ajustado a 5 columnas (tarjetas más angostas) */
+/* Grid ajustado a 5 columnas */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -232,7 +237,7 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   .product-grid { grid-template-columns: 1fr; } 
 }
 
-/* Tarjeta con altura uniforme y bordes redondeados */
+/* Tarjetas de la página de inicio (Tu diseño original) */
 .product-card {
   background: #fff; 
   border: 1px solid var(--border); 
@@ -241,7 +246,15 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   display: flex; 
   flex-direction: column; 
   position: relative;
-  min-height: 310px; /* Mantiene todas las tarjetas del mismo alto */
+  min-height: 310px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+}
+
+.product-card:hover {
+  transform: translateY(-6px) scale(1.02); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
+  border-color: rgba(0, 0, 0, 0.15);
+  z-index: 5; 
 }
 
 .discount-badge {
@@ -261,7 +274,6 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   z-index: 2;
 }
 
-/* Contenedor de la imagen estilizado */
 .product-card .product-img {
   height: 120px; 
   display: flex; 
@@ -272,11 +284,11 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
 }
 
 .product-card .product-img img {
-  max-height: 50%; 
-  object-fit: contain;
+  width: 65%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Título con espacio reservado */
 .product-card h3 {
   font-size: 15px; 
   font-weight: 600; 
@@ -286,7 +298,6 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   overflow: hidden;
 }
 
-/* Descripción con espacio reservado */
 .product-card p.desc {
   font-size: 12px; 
   color: var(--text-muted); 
@@ -308,7 +319,6 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   font-size: 16px;
 }
 
-/* Botón del carrito agrandado sin deformar */
 .cart-btn {
   width: 26px; 
   height: 26px; 
@@ -329,24 +339,23 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
 }
 
 /* ============ FOOTER ============ */
-/* ============ FOOTER ============ */
 .footer-wrap {
-  background: var(--black);
+  background: #121212;
   width: 100%;
-  margin-top: 40px; /* Separa el footer del catálogo */
+  margin-top: 40px;
 }
 
 .footer {
-  background: var(--footer-bg); 
+  background: rgba(18, 18, 18, 0.9); 
   color: #ffffff; 
-  padding: 30px 40px; 
+  padding: 35px 80px 45px 80px; 
   display: flex; 
-  align-items: center; 
+  align-items: flex-start; 
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
   font-size: 14px; 
-  max-width: 1300px; 
+  max-width: 1400px; 
   margin: 0 auto;
 }
 
@@ -356,52 +365,219 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   gap: 8px;
 }
 
+.footer-col span,
+.footer-col p {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  margin: 0;
+}
+
 .footer-copy {
   font-weight: 600; 
   font-size: 16px;
 }
 
-.footer-contact-col {
-  display: flex;
-  flex-direction: column;
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
-.footer-col span {
-  display: flex; 
-  align-items: center; 
-  gap: 8px;
-}
-
-/* Barra divisora vertical entre columnas */
 .footer-divider {
   width: 1px; 
   height: 45px; 
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Ajuste para celulares */
+.footer-location-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  align-self: flex-end;
+  margin-top: 28px; 
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon.facebook { color: #1877F2; }
+.social-icon.tiktok { color: #ffffff; }
+
+.social-icon:hover {
+  transform: translateY(-4px) scale(1.15);
+}
+
+.social-icon.facebook:hover { filter: drop-shadow(0 0 8px rgba(24, 119, 242, 0.8)); }
+.social-icon.instagram:hover { filter: drop-shadow(0 0 8px rgba(228, 64, 95, 0.8)); }
+.social-icon.tiktok:hover { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); }
+
 @media (max-width: 768px) {
   .footer {
     flex-direction: column; 
     text-align: center;
     align-items: center;
   }
-  
+  .footer-location-col {
+    align-items: center;
+  }
+  .social-links {
+    align-self: center;
+  }
   .footer-divider {
-    display: none; /* Oculta las barras en pantallas pequeñas */
+    display: none;
   }
 }
 
-/* ============ RESPONSIVE ============ */
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .nav-container { flex-wrap: wrap; }
-  .search-box { min-width: 0; flex: 1; }
+/* ============ ESTILOS EXCLUSIVOS VISTA CATALOGO ============ */
+.catalog-section {
+  max-width: 1300px;
+  margin: 40px auto 80px auto;
+  padding: 0 40px;
+  min-height: 60vh;
 }
 
-@media (max-width: 768px) {
-  .hero { padding: 40px 6%; text-align: center; justify-content: center; }
-  .hero-content { max-width: 100%; }
-  .footer { flex-direction: column; text-align: center; }
-  .footer-divider { display: none; }
+.catalog-title {
+  font-size: 32px;
+  color: #121212;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.catalog-subtitle {
+  color: #555555;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.catalog-card {
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.catalog-card .product-img-wrap {
+  width: 100%;
+  height: 220px;
+  background: #0d0d0d;
+  overflow: hidden;
+}
+
+.catalog-card .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalog-card .product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.catalog-card .product-title {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.catalog-card .product-desc {
+  color: #a1a1aa;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.catalog-card .product-price {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.catalog-card .btn-buy {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* Esto fuerza a cualquier tarjeta y a sus imágenes a no salirse */
+.product-card {
+  overflow: hidden !important;
+}
+
+.product-card img {
+  width: 100% !important;
+  max-height: 180px !important; /* Ajusta este alto si las quieres más grandes o pequeñas */
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto 10px auto !important;
+}
+/* Estilo base para los enlaces del menú */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #333333;
+  font-weight: normal;
+  padding-bottom: 4px;
+}
+
+/* Estilo cuando la página está seleccionada (ACTIVA) */
+.nav-link.active {
+  font-weight: bold;
+  color: #000000;
+}
+
+/* La línea debajo del texto */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000000; /* Puedes cambiar este color al rojo (#e63946) si prefieres */
+  border-radius: 2px;
+}
+/* Transición suave para que el cambio de tamaño no sea brusco */
+.nav-actions .icon-btn {
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+}
+
+/* Efecto al pasar el cursor (mouse) sobre el ícono */
+.nav-actions .icon-btn:hover {
+  transform: scale(1.2); /* Aumenta el tamaño un 20% */
+  cursor: pointer;
 }
