@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle del Producto | NanoCore</title>
+  <title>Producto | NanoCore</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="../nanocore/Style.css" rel="stylesheet">
@@ -22,7 +22,7 @@
       <nav class="nav-links">
         <a href="nanocore.html" class="nav-link">Inicio</a>
         <a href="catalogo.html" class="nav-link active">Catálogo</a>
-        <a href="nanocore.html#ofertas" class="nav-link">Ofertas</a>
+        <a href="ofertas.html" class="nav-link">Ofertas</a>
       </nav>
 
       <div class="nav-actions">
@@ -42,76 +42,65 @@
     </div>
   </header>
 
- <main class="container">
-    <div class="product-card-detail">
-      
+  <main class="container">
+
+    <div class="product-card-detail" id="product-detail">
       <div class="product-top">
+
         <div class="img-box">
-          <span id="prod-descuento" class="badge-discount" style="display: none;"></span>
-          <img id="prod-imagen" src="" alt="Cargando imagen...">
+          <img src="" alt="" id="product-image">
         </div>
 
         <div class="info-box">
-          <h1 id="prod-nombre">Cargando producto...</h1>
-          
+          <h1 id="product-title">Cargando producto...</h1>
+
           <div class="price-container">
-            <span id="prod-precio-anterior" class="old-price"></span>
-            <span id="prod-precio" class="current-price"></span>
+            <span class="old-price" id="old-price" style="display:none;"></span>
+            <span class="current-price" id="current-price">$0.00</span>
           </div>
 
-          <div class="stock-status">
-            <span class="stock-badge">✓ En Stock</span>
-          </div>
+          <span class="stock-badge">En stock</span>
 
           <div class="quantity-selector">
-            <label for="cant"><b>Cantidad:</b></label>
+            <span>Cantidad:</span>
             <div class="qty-controls">
-              <button type="button" class="btn-qty" onclick="if(cant.value > 1) cant.value--">-</button>
-              <input type="number" id="cant" value="1" min="1" max="10" readonly>
-              <button type="button" class="btn-qty" onclick="if(cant.value < 10) cant.value++">+</button>
+              <button type="button" class="btn-qty" id="qty-decrease" aria-label="Disminuir cantidad">−</button>
+              <input type="text" id="qty-input" value="1" readonly>
+              <button type="button" class="btn-qty" id="qty-increase" aria-label="Aumentar cantidad">+</button>
             </div>
           </div>
 
           <div class="action-buttons">
-            <button class="btn-cart" type="button">Añadir al Carrito</button>
-            <button class="btn-buy" type="button">Comprar Ahora</button>
+            <button type="button" class="btn-cart" id="btn-add-cart">Agregar al carrito</button>
+            <button type="button" class="btn-buy" id="btn-buy-now">Comprar ahora</button>
           </div>
 
           <div class="value-props">
-            <div class="prop-item">
-              <span>💳 <b>Método de Pago:</b> Únicamente Tarjeta de Crédito / Débito</span>
-            </div>
-            <div class="prop-item">
-              <span>🚚 Envío rápido y seguro en Sonsonate y todo El Salvador</span>
-            </div>
-            <div class="prop-item">
-              <span>🛡️ Garantía oficial de NanoCore</span>
-            </div>
+            <p>Envío disponible a todo El Salvador.</p>
+            <p>Garantía de fábrica incluida.</p>
           </div>
-
         </div>
+
       </div>
 
       <div class="features-bar">
-        <h2>Características principales</h2>
+        <h2>Características</h2>
       </div>
 
       <div class="features-content">
-        <ul id="prod-caracteristicas">
-          </ul>
+        <ul id="features-list"></ul>
       </div>
 
       <div class="footer-btn-container">
-        <a href="catalogo.html" class="btn-more-info" style="text-decoration:none;">Volver al Catálogo</a>
+        <button type="button" class="btn-more-info">Más información</button>
       </div>
-
     </div>
+
   </main>
-  
 
   <footer class="footer-wrap">
     <div class="footer">
-      
+
       <div class="footer-col">
         <p class="footer-copy">© 2026 NANOCORE</p>
         <p>Todos los derechos reservados.</p>
@@ -121,11 +110,11 @@
 
       <div class="footer-col footer-contact-col">
         <span>
-          <img src="./assets/mail.svg" alt="Correo" class="footer-icon">
+          <img src="../nanocore-1/assets/mail.svg" alt="Correo" class="footer-icon">
           NANOCORE@gmail.com
         </span>
         <span>
-          <img src="./assets/phone.svg" alt="Teléfono" class="footer-icon">
+          <img src="../nanocore-1/assets/phone.svg" alt="Teléfono" class="footer-icon">
           7051-3605
         </span>
       </div>
@@ -134,10 +123,10 @@
 
       <div class="footer-col footer-location-col">
         <p>
-          <img src="./assets/map-pin.svg" alt="Ubicación" class="footer-icon">
+          <img src="../nanocore-1/assets/map-pin.svg" alt="Ubicación" class="footer-icon">
           Sonsonate, El Salvador
         </p>
-        
+
         <div class="social-links">
           <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-icon facebook">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -169,6 +158,7 @@
     </div>
   </footer>
 
-  <script src="productos.js"></script>
+  <script src="productos-data.js"></script>
+  <script src="producto.js"></script>
 </body>
 </html>
