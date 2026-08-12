@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const featuresListEl = document.getElementById('features-list');
   const cartBtn = document.getElementById('btn-add-cart');
   const buyBtn = document.getElementById('btn-buy-now');
+  const moreInfoBtn = document.querySelector('.btn-more-info');
+
+  // ===================== BOTÓN "MÁS INFORMACIÓN" -> CONTACTO =====================
+  if (moreInfoBtn) {
+    moreInfoBtn.addEventListener('click', () => {
+      window.location.href = 'contacto.html';
+    });
+  }
 
   if (!product) {
     // No se encontró el producto (id ausente o inválido)

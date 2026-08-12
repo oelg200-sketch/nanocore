@@ -48,6 +48,7 @@ window.PRODUCTS = [
     name: "Laptop Dell RDK0W",
     desc: "Intel Core i5, 8GB RAM, 512GB SSD, 15.6\"",
     price: 561.96,
+    discount: 30,
     image: "../nanocore-1/assets/ima...jpg"
   },
   {
@@ -57,6 +58,22 @@ window.PRODUCTS = [
     price: 129.00,
     discount: 30,
     image: "../nanocore-1/assets/images (3).jpg"
+  },
+  {
+    id: "monitor-tcl-mini",
+    name: "Monitor TCL Mini",
+    desc: "Monitor TCL Mini LED de alta calidad y brillo.",
+    price: 167.00,
+    discount: 30,
+    image: "../nanocore-1/assets/images (2).jpg"
+  },
+  {
+    id: "monitor-gaming-acer-2",
+    name: "Monitor Gaming Acer",
+    desc: "LED 27\" FHD Negro VG270P6BIP",
+    price: 150.36,
+    discount: 30,
+    image: "../nanocore-1/assets/images (1).jpg"
   },
   {
     id: "xiaomi-redmi-note-15",
@@ -93,6 +110,14 @@ window.PRODUCTS = [
     price: 1399.30,
     discount: 30,
     image: "../nanocore-1/assets/images (4).jpg"
+  },
+  {
+    id: "combo-samsung-s26",
+    name: "Combo Samsung S26",
+    desc: "12GB RAM, 256GB Almacenamiento, Negro + Buds Fe",
+    price: 1399.30,
+    discount: 30,
+    image: "../nanocore-1/assets/images (6).jpg"
   },
   {
     id: "teclado-mouse",
@@ -191,6 +216,105 @@ window.PRODUCTS = [
     name: "Audífonos Huawei FreeBuds SE 2",
     desc: "Diseño ergonómico con estuche de carga, blanco y negro",
     price: 700.00,
+    discount: 30,
     image: "../nanocore-1/assets/images (16).jpg"
+  },
+
+  // ===================== PRODUCTOS AGREGADOS (antes solo estaban en ofertas.html / nanocore.html sin id) =====================
+  {
+    id: "combo-pantalla-tcl",
+    name: "Combo Pantalla TCL",
+    desc: "75\" QLED 4K UHD 75P8K + Barra de Sonido TCL S55H",
+    price: 874.30,
+    discount: 30,
+    image: "../nanocore-1/assets/Captura de pantalla 2026-08-06 222425.png"
+  },
+  {
+    id: "iphone-17-oferta",
+    name: "Iphone 17",
+    desc: "Potente, elegante, pantalla 120Hz, cámara 48MP, chip A19, USB-C.",
+    price: 1083.00,
+    discount: 5,
+    image: "../nanocore-1/assets/images (8).jpg"
+  },
+  {
+    id: "motorola-moto-g24",
+    name: "Motorola Moto G24 o G34 5G",
+    desc: "Motorola negro y audífonos inalámbricos con pantalla digital.",
+    price: 2100.00,
+    discount: 40,
+    image: "../nanocore-1/assets/Captura de pantalla 2026-08-06 222939.png"
+  },
+  {
+    id: "setup-gamer",
+    name: "Setup Gamer",
+    desc: "Setup gamer completo con PC, monitor, periféricos y accesorios",
+    price: 1550.00,
+    discount: 30,
+    image: "../nanocore-1/assets/Captura de pantalla 2026-08-06 223120.png"
+  },
+  {
+    id: "combo-logitech-wave-keys",
+    name: "Combo Logitech Wave Keys",
+    desc: "Teclado ergonómico inalámbrico con reposamanos integrado y cámara web HD.",
+    price: 1600.00,
+    discount: 30,
+    image: "../nanocore-1/assets/images (11).jpg"
+  },
+  {
+    id: "laptop-hp-impresora",
+    name: "Laptop HP y una Impresora Multifuncional HP",
+    desc: "Memoria RAM: 4 GB o 8 GB. Almacenamiento: 128 GB",
+    price: 349.00,
+    discount: 30,
+    image: "../nanocore-1/assets/images (12).jpg"
+  },
+  {
+    id: "ps5-825gb",
+    name: "Playstation 5 825 GB",
+    desc: "Consola 4K, diseño exclusivo, carga ultra rápida y control háptico.",
+    price: 550.00,
+    discount: 30,
+    image: "../nanocore-1/assets/play 5.jpg"
+  },
+  {
+    id: "combo-xiaomi-14t-reloj",
+    name: "Combo Xiaomi 14T y El Reloj",
+    desc: "Teléfono inteligente de gama media-alta, color violeta, y reloj inteligente con correa negra.",
+    price: 600.00,
+    discount: 30,
+    image: "../nanocore-1/assets/images (14).jpg"
+  },
+  {
+    id: "samsung-freestyle",
+    name: "Samsung The Freestyle",
+    desc: "Proyector portátil inteligente Samsung con diseño giratorio de 180°",
+    price: 699.30,
+    discount: 30,
+    image: "../nanocore-1/assets/images (15).jpg"
+  },
+  {
+    id: "combo-iphone12pro",
+    name: "iPhone 12 Pro + Audífonos iPhone + Smartwatch",
+    desc: "iPhone 12 Pro 256GB, audífonos Bluetooth y smartwatch compatible.",
+    price: 630.00,
+    discount: 30,
+    image: "../nanocore-1/assets/images (17).jpg"
+  },
+  {
+    id: "combo-honor-smartwatch",
+    name: "Combo Honor Smartphone + Smartwatch",
+    desc: "Tono gris con triple cámara, acompañado de un reloj inteligente color negro",
+    price: 380.00,
+    discount: 30,
+    image: "../nanocore-1/assets/images (18).jpg"
+  },
+  {
+    id: "combo-logitech-pebble-keys2",
+    name: "Combo Logitech Pebble Keys 2",
+    desc: "Teclado inalámbrico compacto y mouse estilizado en tono azul lavanda, ideales para escritorio moderno.",
+    price: 65.00,
+    discount: 30,
+    image: "../nanocore-1/assets/images (19).jpg"
   }
 ];

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Producto | NanoCore</title>
+  <title>Contacto | NanoCore</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="../nanocore/Style.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
       <nav class="nav-links">
         <a href="nanocore.html" class="nav-link">Inicio</a>
-        <a href="catalogo.html" class="nav-link active">Catálogo</a>
+        <a href="catalogo.html" class="nav-link">Catálogo</a>
         <a href="ofertas.html" class="nav-link">Ofertas</a>
       </nav>
 
@@ -42,61 +42,72 @@
     </div>
   </header>
 
-  <main class="container">
+  <!-- ===================== CONTACTO ===================== -->
+  <section class="contact-hero">
+    <h1 class="contact-title">¡CONTÁCTANOS!</h1>
 
-    <div class="product-card-detail" id="product-detail">
-      <div class="product-top">
+    <div class="contact-grid">
 
-        <div class="img-box">
-          <img src="" alt="" id="product-image">
+      <!-- Formulario -->
+      <div class="contact-card contact-form-card">
+        <h2>¡Envíanos un mensaje!</h2>
+        <form id="contact-form">
+          <label for="c-nombre">Nombre completo
+            <input type="text" id="c-nombre" name="nombre" placeholder="Ej. Oscar Eduardo López Guerrero" required>
+          </label>
+
+          <label for="c-email">Correo electrónico
+            <input type="email" id="c-email" name="email" placeholder="Tu@gmail.com" required>
+          </label>
+
+          <label for="c-consulta">Consultas
+            <input type="text" id="c-consulta" name="consulta" placeholder="¿Sobre qué producto o tema es tu consulta?">
+          </label>
+
+          <label for="c-mensaje">Mensaje
+            <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Explicación" required></textarea>
+          </label>
+
+          <button type="submit" class="btn-send">Enviar mensaje</button>
+          <p class="form-success" id="form-success">¡Gracias! Tu mensaje fue enviado, te responderemos pronto.</p>
+        </form>
+      </div>
+
+      <!-- Información -->
+      <div class="contact-card contact-info-card">
+        <h2>Nuestra información</h2>
+
+        <ul class="contact-info-list">
+          <li>
+            <img src="../nanocore-1/assets/map-pin.svg" alt="" class="info-icon">
+            <span><strong>Dirección:</strong> 3a calle poniente, Barrio San Miguelito, Sonzacate, Sonsonate</span>
+          </li>
+          <li>
+            <img src="../nanocore-1/assets/phone.svg" alt="" class="info-icon">
+            <span><strong>Teléfono:</strong> 7051-3605</span>
+          </li>
+          <li>
+            <img src="../nanocore-1/assets/mail.svg" alt="" class="info-icon">
+            <span><strong>Correo:</strong> NANOCORE@gmail.com</span>
+          </li>
+          <li>
+            <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong>Horario:</strong> Lunes a Sábado 7:00 AM - 8:00 PM</span>
+          </li>
+        </ul>
+
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps?q=Sonzacate,Sonsonate,El%20Salvador&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación NanoCore">
+          </iframe>
         </div>
-
-        <div class="info-box">
-          <h1 id="product-title">Cargando producto...</h1>
-
-          <div class="price-container">
-            <span class="old-price" id="old-price" style="display:none;"></span>
-            <span class="current-price" id="current-price">$0.00</span>
-          </div>
-
-          <span class="stock-badge">En stock</span>
-
-          <div class="quantity-selector">
-            <span>Cantidad:</span>
-            <div class="qty-controls">
-              <button type="button" class="btn-qty" id="qty-decrease" aria-label="Disminuir cantidad">−</button>
-              <input type="text" id="qty-input" value="1" readonly>
-              <button type="button" class="btn-qty" id="qty-increase" aria-label="Aumentar cantidad">+</button>
-            </div>
-          </div>
-
-          <div class="action-buttons">
-            <button type="button" class="btn-cart" id="btn-add-cart">Agregar al carrito</button>
-            <button type="button" class="btn-buy" id="btn-buy-now">Comprar ahora</button>
-          </div>
-
-          <div class="value-props">
-            <p>Envío disponible a todo El Salvador.</p>
-            <p>Garantía de fábrica incluida.</p>
-          </div>
-        </div>
-
       </div>
 
-      <div class="features-bar">
-        <h2>Características</h2>
-      </div>
-
-      <div class="features-content">
-        <ul id="features-list"></ul>
-      </div>
-
-      <div class="footer-btn-container">
-        <button type="button" class="btn-more-info">Más información</button>
-      </div>
     </div>
-
-  </main>
+  </section>
 
   <footer class="footer-wrap">
     <div class="footer">
@@ -159,7 +170,7 @@
   </footer>
 
   <script src="productos-data.js"></script>
-  <script src="producto.js"></script>
   <script src="buscador.js"></script>
+  <script src="contacto.js"></script>
 </body>
 </html>

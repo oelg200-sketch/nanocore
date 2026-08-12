@@ -564,7 +564,261 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   cursor: pointer;
 }
 
-/* ============ FOOTER ============ */
+/* ==========================================
+   ESTILOS EXCLUSIVOS: PÁGINA DE CONTACTO (contacto.html)
+   ========================================== */
+.contact-hero {
+  background: #e2e2e2;
+  padding: 60px 8% 80px;
+}
+
+.contact-title {
+  text-align: center;
+  color: #000000;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-card {
+  background: var(--teal);
+  border-radius: 14px;
+  padding: 30px 32px;
+  color: #ffffff;
+}
+
+.contact-card h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+  color: #ffffff;
+}
+
+/* --- Formulario --- */
+.contact-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: #ffffff;
+  resize: none;
+}
+
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder {
+  color: #9aa0a6;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+  outline: 2px solid #0d2b45;
+}
+
+.btn-send {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #0d2b45;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 8px;
+  margin-top: 6px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.2);
+}
+
+.form-success {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #eaffea;
+  display: none;
+}
+
+/* --- Información de contacto --- */
+.contact-info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.contact-info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.contact-info-list .info-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  filter: brightness(0) invert(1);
+}
+
+.contact-map {
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  height: 200px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ==========================================
+   ESTILOS EXCLUSIVOS: PÁGINA NOSOTROS (nosotros.html)
+   ========================================== */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 0 20px;
+  flex-wrap: wrap;
+}
+
+.about-intro-img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-intro-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-intro-text {
+  flex: 1.2;
+  min-width: 280px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 30px 0;
+}
+
+@media (max-width: 800px) {
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-cards-wrap {
+  background: var(--teal);
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin: 30px 0;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-card {
+  background: #e2e2e2;
+  border-radius: 14px;
+  padding: 18px 22px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card h3 {
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #000000;
+}
+
+.about-card p,
+.about-card ul {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+.about-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-banner {
+  background: #0d1b2a;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  margin: 30px 0 10px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+
 .footer-wrap {
   background: #121212;
   width: 100%;

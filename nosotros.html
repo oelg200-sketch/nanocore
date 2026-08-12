@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Producto | NanoCore</title>
+  <title>Nosotros | NanoCore</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="../nanocore/Style.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
       <nav class="nav-links">
         <a href="nanocore.html" class="nav-link">Inicio</a>
-        <a href="catalogo.html" class="nav-link active">Catálogo</a>
+        <a href="catalogo.html" class="nav-link">Catálogo</a>
         <a href="ofertas.html" class="nav-link">Ofertas</a>
       </nav>
 
@@ -31,7 +31,7 @@
           <input type="text" placeholder="Buscar...">
         </div>
 
-        <button type="button" class="icon-btn" aria-label="Cuenta">
+        <button type="button" class="icon-btn" id="btn-account" aria-label="Cuenta">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </button>
 
@@ -44,57 +44,65 @@
 
   <main class="container">
 
-    <div class="product-card-detail" id="product-detail">
-      <div class="product-top">
+    <!-- ===================== INTRO ===================== -->
+    <section class="about-intro">
+      <div class="about-intro-img">
+        <img src="../nanocore-1/assets/computadora_N.png" alt="Tecnología NanoCore">
+      </div>
+      <div class="about-intro-text">
+        <p>
+          En Nanocore, nos apasiona la tecnología y su capacidad para transformar la vida de las personas.
+          Somos una empresa dedicada a ofrecer dispositivos electrónicos modernos, innovadores y de alta
+          calidad, pensados para adaptarse a las necesidades del mundo actual.
+        </p>
+        <br>
+        <p>
+          Nuestro objetivo es acercar la mejor tecnología a todos, combinando rendimiento, diseño y
+          accesibilidad. En Nanocore, creemos que cada dispositivo debe ser una herramienta que impulse tu
+          productividad, creatividad y entretenimiento.
+        </p>
+        <br>
+        <p>
+          Trabajamos constantemente para mantenernos a la vanguardia, incorporando las últimas tendencias y
+          avances tecnológicos garantizando productos confiables y eficientes.
+        </p>
+      </div>
+    </section>
 
-        <div class="img-box">
-          <img src="" alt="" id="product-image">
+    <!-- ===================== MISION / VISION / VALORES ===================== -->
+    <section class="about-cards-wrap">
+      <div class="about-cards">
+        <div class="about-card">
+          <h3>Misión</h3>
+          <p>Brindar soluciones tecnológicas de calidad que mejoren la vida diaria de nuestro cliente</p>
         </div>
 
-        <div class="info-box">
-          <h1 id="product-title">Cargando producto...</h1>
-
-          <div class="price-container">
-            <span class="old-price" id="old-price" style="display:none;"></span>
-            <span class="current-price" id="current-price">$0.00</span>
-          </div>
-
-          <span class="stock-badge">En stock</span>
-
-          <div class="quantity-selector">
-            <span>Cantidad:</span>
-            <div class="qty-controls">
-              <button type="button" class="btn-qty" id="qty-decrease" aria-label="Disminuir cantidad">−</button>
-              <input type="text" id="qty-input" value="1" readonly>
-              <button type="button" class="btn-qty" id="qty-increase" aria-label="Aumentar cantidad">+</button>
-            </div>
-          </div>
-
-          <div class="action-buttons">
-            <button type="button" class="btn-cart" id="btn-add-cart">Agregar al carrito</button>
-            <button type="button" class="btn-buy" id="btn-buy-now">Comprar ahora</button>
-          </div>
-
-          <div class="value-props">
-            <p>Envío disponible a todo El Salvador.</p>
-            <p>Garantía de fábrica incluida.</p>
-          </div>
+        <div class="about-card">
+          <h3>Visión</h3>
+          <p>Convertirnos en una empresa líder en innovación electrónica, reconocida por nuestra excelencia y compromiso.</p>
         </div>
 
+        <div class="about-card">
+          <h3>Valores</h3>
+          <ul>
+            <li>Innovación</li>
+            <li>Calidad</li>
+            <li>Confianza</li>
+            <li>Compromiso</li>
+            <li>Atención al cliente</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="features-bar">
-        <h2>Características</h2>
-      </div>
-
-      <div class="features-content">
-        <ul id="features-list"></ul>
-      </div>
-
-      <div class="footer-btn-container">
-        <button type="button" class="btn-more-info">Más información</button>
-      </div>
-    </div>
+    <!-- ===================== BANNER FINAL ===================== -->
+    <section class="about-banner">
+      <p>
+        En Nanocore, buscamos acercar la tecnología a todas las personas, ofreciendo dispositivos electrónicos
+        innovadores, modernos y accesibles. Con pasión por la innovación, trabajamos constantemente para
+        ofrecer lo mejor en tecnología y convertirnos en una empresa confiable para nuestros clientes.
+      </p>
+    </section>
 
   </main>
 
@@ -159,7 +167,6 @@
   </footer>
 
   <script src="productos-data.js"></script>
-  <script src="producto.js"></script>
   <script src="buscador.js"></script>
 </body>
 </html>
