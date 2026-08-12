@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | NanoCore</title>
+  <title>Pago seguro | NanoCore</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="../nanocore/Style.css" rel="stylesheet">
@@ -42,72 +42,135 @@
     </div>
   </header>
 
-  <!-- ===================== CONTACTO ===================== -->
-  <section class="contact-hero">
-    <h1 class="contact-title">¡CONTÁCTANOS!</h1>
+  <main class="container checkout-container">
 
-    <div class="contact-grid">
-
-      <!-- Formulario -->
-      <div class="contact-card contact-form-card">
-        <h2>¡Envíanos un mensaje!</h2>
-        <form id="contact-form">
-          <label for="c-nombre">Nombre completo
-            <input type="text" id="c-nombre" name="nombre" placeholder="Ej. Oscar Eduardo López Guerrero" required>
-          </label>
-
-          <label for="c-email">Correo electrónico
-            <input type="email" id="c-email" name="email" placeholder="Tu@gmail.com" required>
-          </label>
-
-          <label for="c-consulta">Consultas
-            <input type="text" id="c-consulta" name="consulta" placeholder="¿Sobre qué producto o tema es tu consulta?">
-          </label>
-
-          <label for="c-mensaje">Mensaje
-            <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Explicación" required></textarea>
-          </label>
-
-          <button type="submit" class="btn-send">Enviar mensaje</button>
-          <p class="form-success" id="form-success">¡Gracias! Tu mensaje fue enviado, te responderemos pronto.</p>
-        </form>
+    <div class="checkout-header">
+      <h2 class="section-title">Pago seguro</h2>
+      <div class="checkout-steps">
+        <span class="checkout-step done">1. Carrito</span>
+        <span class="checkout-step-sep">—</span>
+        <span class="checkout-step active">2. Pago</span>
+        <span class="checkout-step-sep">—</span>
+        <span class="checkout-step">3. Confirmación</span>
       </div>
-
-      <!-- Información -->
-      <div class="contact-card contact-info-card">
-        <h2>Nuestra información</h2>
-
-        <ul class="contact-info-list">
-          <li>
-            <img src="../nanocore-1/assets/map-pin.svg" alt="" class="info-icon">
-            <span><strong>Dirección:</strong> 3a calle poniente, Barrio San Miguelito, Sonzacate, Sonsonate</span>
-          </li>
-          <li>
-            <img src="../nanocore-1/assets/phone.svg" alt="" class="info-icon">
-            <span><strong>Teléfono:</strong> 7051-3605</span>
-          </li>
-          <li>
-            <img src="../nanocore-1/assets/mail.svg" alt="" class="info-icon">
-            <span><strong>Correo:</strong> NANOCORE@gmail.com</span>
-          </li>
-          <li>
-            <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span><strong>Horario:</strong> Lunes a Sábado 7:00 AM - 8:00 PM</span>
-          </li>
-        </ul>
-
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps?q=Sonzacate,Sonsonate,El%20Salvador&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación NanoCore">
-          </iframe>
-        </div>
-      </div>
-
     </div>
-  </section>
+
+    <!-- ===================== VISTA: FORMULARIO DE PAGO ===================== -->
+    <div class="checkout-grid" id="checkout-view">
+
+      <!-- Resumen del pedido -->
+      <section class="checkout-summary" id="checkout-summary">
+        <h3>Resumen del pedido</h3>
+        <div class="checkout-summary-list" id="checkout-summary-list">
+          <!-- items generados dinámicamente por pago.js -->
+        </div>
+        <div class="checkout-summary-row">
+          <span>Subtotal</span>
+          <span id="checkout-subtotal">$0.00</span>
+        </div>
+        <div class="checkout-summary-row">
+          <span>Envío</span>
+          <span class="checkout-shipping-free">Gratis</span>
+        </div>
+        <div class="checkout-summary-row checkout-summary-total">
+          <span>Total</span>
+          <span id="checkout-total">$0.00</span>
+        </div>
+        <div class="checkout-badge-secure">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Pago 100% seguro y encriptado
+        </div>
+      </section>
+
+      <!-- Formulario de pago -->
+      <section class="checkout-form-card">
+        <h3>Datos de pago</h3>
+
+        <form id="payment-form" novalidate>
+
+          <div class="card-preview" id="card-preview">
+            <div class="card-preview-top">
+              <span class="card-preview-chip"></span>
+              <span class="card-preview-brand" id="card-preview-brand">NANOCORE PAY</span>
+            </div>
+            <div class="card-preview-number" id="card-preview-number">•••• •••• •••• ••••</div>
+            <div class="card-preview-bottom">
+              <div>
+                <span class="card-preview-label">Titular</span>
+                <div class="card-preview-name" id="card-preview-name">NOMBRE APELLIDO</div>
+              </div>
+              <div>
+                <span class="card-preview-label">Vence</span>
+                <div class="card-preview-exp" id="card-preview-exp">MM/AA</div>
+              </div>
+            </div>
+          </div>
+
+          <label for="p-nombre">Nombre en la tarjeta
+            <input type="text" id="p-nombre" name="nombre" placeholder="Ej. Oscar Eduardo López" required>
+            <span class="field-error" id="err-nombre"></span>
+          </label>
+
+          <label for="p-numero">Número de tarjeta
+            <input type="text" id="p-numero" name="numero" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" required>
+            <span class="field-error" id="err-numero"></span>
+          </label>
+
+          <div class="form-row">
+            <label for="p-vencimiento">Vencimiento (MM/AA)
+              <input type="text" id="p-vencimiento" name="vencimiento" inputmode="numeric" placeholder="MM/AA" maxlength="5" required>
+              <span class="field-error" id="err-vencimiento"></span>
+            </label>
+
+            <label for="p-cvv">CVV
+              <input type="text" id="p-cvv" name="cvv" inputmode="numeric" placeholder="123" maxlength="4" required>
+              <span class="field-error" id="err-cvv"></span>
+            </label>
+          </div>
+
+          <label for="p-email">Correo electrónico
+            <input type="email" id="p-email" name="email" placeholder="tu@gmail.com" required>
+            <span class="field-error" id="err-email"></span>
+          </label>
+
+          <label for="p-direccion">Dirección de envío
+            <input type="text" id="p-direccion" name="direccion" placeholder="Calle, número, colonia" required>
+            <span class="field-error" id="err-direccion"></span>
+          </label>
+
+          <label for="p-ciudad">Ciudad / Municipio
+            <input type="text" id="p-ciudad" name="ciudad" placeholder="Ej. Sonsonate" required>
+            <span class="field-error" id="err-ciudad"></span>
+          </label>
+
+          <button type="submit" class="btn-pay" id="btn-pay">Confirmar y pagar</button>
+
+          <p class="checkout-disclaimer">
+            Al confirmar tu compra aceptas nuestros términos de servicio. Todos los datos de tu
+            tarjeta se procesan de forma segura y no se almacenan en nuestros servidores.
+          </p>
+        </form>
+      </section>
+    </div>
+
+    <!-- ===================== VISTA: COMPRA EXITOSA (oculta al inicio) ===================== -->
+    <div class="checkout-success" id="checkout-success" style="display:none;">
+      <div class="checkout-success-icon">
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>¡Compra realizada con éxito!</h2>
+      <p>Gracias por tu pedido. Te enviaremos un correo con los detalles y el seguimiento de tu envío.</p>
+      <p class="checkout-order-number">Número de orden: <strong id="order-number">—</strong></p>
+      <a href="catalogo.html" class="btn-primary checkout-success-btn">Seguir comprando</a>
+    </div>
+
+    <!-- ===================== VISTA: CARRITO VACÍO ===================== -->
+    <div class="checkout-empty" id="checkout-empty" style="display:none;">
+      <p>No tienes productos para pagar todavía.</p>
+      <p><a href="catalogo.html">Ver catálogo de productos →</a></p>
+    </div>
+
+  </main>
 
   <footer class="footer-wrap">
     <div class="footer">
@@ -172,6 +235,6 @@
   <script src="productos-data.js"></script>
   <script src="buscador.js"></script>
   <script src="carrito.js"></script>
-  <script src="contacto.js"></script>
+  <script src="pago.js"></script>
 </body>
 </html>

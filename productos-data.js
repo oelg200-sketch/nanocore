@@ -199,7 +199,7 @@ window.PRODUCTS = [
   },
   {
     id: "ps5-control",
-    name: "PlayStation 5",
+    name: "Mando de PlayStation 5",
     desc: "Mando de colección de PS5 inspirado en la invasión simbiótica",
     price: 110.00,
     image: "../nanocore-1/assets/images.control.jpg"
@@ -231,8 +231,8 @@ window.PRODUCTS = [
   },
   {
     id: "iphone-17-oferta",
-    name: "Iphone 17",
-    desc: "Potente, elegante, pantalla 120Hz, cámara 48MP, chip A19, USB-C.",
+    name: "Iphone 17 Pro Max",
+    desc: "Potente, elegante, pantalla 120Hz, cámara 48MP, chip A19, USB-C, 1Tb de almacenamiento.",
     price: 1083.00,
     discount: 5,
     image: "../nanocore-1/assets/images (8).jpg"
