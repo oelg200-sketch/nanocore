@@ -1626,3 +1626,57 @@ h1, h2, h3, .logo-text, .nav-link, .btn-primary {
   font-weight: 700;
   text-decoration: underline;
 }
+/* ==========================================
+   RESPONSIVE: NAVBAR EN MÓVIL
+   ========================================== */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .logo-group {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .search-box {
+    margin-left: 0;
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .hero {
+    padding: 40px 6%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+}
